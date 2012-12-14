@@ -1,4 +1,4 @@
-ectom.vim
+ecto.vim
 ============
 
 Automate component test with casperjs.
