@@ -1,0 +1,3 @@
+[submodule "casper-includes"]
+	path = casper-includes
+	url = git@github.com:jenkinslaw/casper-includes.git
