@@ -1,14 +1,8 @@
-
-var casper = require('casper').create();
-var includes = casper.cli.get('includes').split(',');
-
-// Load our include files.
-casper.each(includes, function(self, include) {
-  phantom.injectJs(include);
-});
-
+var casper    = require('casper').create();
 var url       = casper.cli.get('url');
 var id        = casper.cli.get('id');
+
+phantom.injectJs('casper-includes/Eval.js');
 
 
 casper.start().open(url).then(function() {Generate.FormTests(id, this);});
