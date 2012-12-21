@@ -1,12 +1,3 @@
-var casper    = require('casper').create();
-var url       = casper.cli.get('url');
-var id        = casper.cli.get('id');
-
-phantom.injectJs('casper-includes/Eval.js');
-
-
-casper.start().open(url).then(function() {Generate.FormTests(id, this);});
-casper.run(function(){this.exit();});
 
 
 var Generate = {};
