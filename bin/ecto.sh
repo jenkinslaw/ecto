@@ -5,6 +5,10 @@
 # If the action is not given a default action will be selected.
 
 # Our scripts depend on knowing where things are.
+
+action=''
+location=''
+
 setSourceDirectory()
 {
   scriptPath=$(which $0)
@@ -21,7 +25,7 @@ setSourceDirectory()
 synopsis()
 {
   echo ''
-  echo  Synopsis:
+  echo 'Synopsis:'
   echo '---------'
   echo 'ecto --help                          Show this synopsis.'
   echo 'ecto selftest                        Run self tests using casperjs.'
@@ -34,7 +38,27 @@ synopsis()
   echo '<action>                             The type of tests to generate (i.e. form, view).'
   echo ''
   echo 'If the action is not given a default action will be selected.'
+  echo ''
+  echo ''
 }
+
+
+# A location must be provided when an action is given.
+# $1 A location.
+setLocation()
+{
+  if [ -n "$1" ]
+  then
+    location=$1
+  else
+    echo ''
+    echo 'You must provide a location as a second argument when you supply an '
+    echo 'action as a first argument.'
+    synopsis
+    exit 64
+  fi
+}
+
 
 setSourceDirectory
 
@@ -43,23 +67,24 @@ if [ $# -lt 1 ]
 then
   echo "You must provided at least one argument to run ecto."
   synopsis
-  exit 0;
+  exit 64
 fi
 
 # View the help.
 if [ $1 = '--help' -o $1 = '-h' -o $1 = '-help' ]
 then
   synopsis
-  exit 0;
+  exit 64
 fi
 
 INCLUDES="$DIR/../casper-includes"
+
 
 # Set up for generating View tests.
 if [ $1 = 'view' ]
 then
   action='view'
-  location=$2
+  setLocation $2
 
   if [ $# -eq 3 ]
   then
@@ -72,7 +97,7 @@ then
 elif [ $1 = 'form' ]
 then
   action='form'
-  location=$2
+  setLocation $2
   if [ $# -eq 3 ]
   then
     id=$3

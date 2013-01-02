@@ -56,6 +56,4 @@ Generate.FormTests.Selectors = function(field, casper) {
 
 Generate.ViewTests = function(id, casper) {
   var view = new ViewFactory(id, casper);
-
-  Eval.dump(view);
 };
