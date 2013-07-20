@@ -35,7 +35,6 @@ synopsis()
   echo '---------'
   echo '<action>                             The type of test to generate (i.e. form, view).'
   echo '<location>                           The location of the file for URL to generate tests for.'
-  echo '<action>                             The type of tests to generate (i.e. form, view).'
   echo ''
   echo 'If the action is not given a default action will be selected.'
   echo ''
