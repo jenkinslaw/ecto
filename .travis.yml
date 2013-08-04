@@ -9,4 +9,11 @@ before_install:
   - sudo mv phantomjs-1.9.0-linux-x86_64/bin/phantomjs bin/phantomjs190
   - bin/phantomjs190 --version
   - ls -la bin/phantomjs190
+  - echo "installing CasperJS 1.1-beta1"
+  - wget https://github.com/n1k0/casperjs/tarball/1.1-beta1 -O casperjs-1.1-beta1.tgz
+  - mkdir casperjs
+  - tar -xvf casperjs-1.1-beta1.tgz -C casperjs --strip-components 1
+  - sudo ln -s ~/casperjs/bin/casperjs bin/casperjs
+  - bin/casperjs --version
+  - ls -la bin/casperjs
 
