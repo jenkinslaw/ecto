@@ -13,7 +13,7 @@ before_install:
   - wget https://github.com/n1k0/casperjs/tarball/1.1-beta1 -O casperjs-1.1-beta1.tgz
   - mkdir casperjs
   - tar -xvf casperjs-1.1-beta1.tgz -C casperjs --strip-components 1
-  - sudo ln -s ~/casperjs/bin/casperjs ~/bin/casperjs
-  - casperjs --version
-  - ls -la bin/casperjs
   - ls -la casperjs/bin
+  - ln -s ~/bin/casperjs ~/casperjs/bin/casperjs
+  - ls -la bin/casperjs
+  - casperjs --version
