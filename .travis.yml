@@ -15,7 +15,7 @@ before_install:
   - tar -xvf casperjs-1.1-beta1.tgz -C casperjs --strip-components 1
   - ls -la casperjs/bin
   - ls -la ~
-  - cwd
+  - pwd
   - ln -s casperjs/bin/casperjs bin/casperjs
   - ls -la bin/casperjs
   - casperjs --version
