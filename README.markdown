@@ -1,4 +1,4 @@
-ecto
+ecto [![Build Status](https://travis-ci.org/jenkinslaw/ecto.png?branch=master)](https://travis-ci.org/jenkinslaw/ecto)
 ============
 Automate component test with casperjs. The idea here is
 to point the app to a URL or file and have it spit out some
