@@ -2,7 +2,7 @@
 task :default => :selftest
 
 task :selftest do
-  exec('bin/ecto.sh selftest')
+  exec('bin/ecto selftest')
 end
 
 # Run ecto seltest.
@@ -13,7 +13,7 @@ task :install => :create_ecto_symlink do
 end
 
 task :create_ecto_symlink do
-  ecto = File.dirname(__FILE__) + '/bin/ecto.sh'
+  ecto = File.dirname(__FILE__) + '/bin/ecto'
   File.symlink(ecto, '/usr/bin/ecto')
 end
 
