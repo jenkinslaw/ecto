@@ -19,7 +19,6 @@ before_install:
   - pwd
   - ln -s /home/travis/build/jenkinslaw/ecto/bin/casperjs bin/casperjs
   - PATH="$(pwd)/bin:$PATH" && export PATH
-  - bin/casperjs --version
 env:
   - PHANTOMJS_EXECUTABLE="bin/phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes"
 
