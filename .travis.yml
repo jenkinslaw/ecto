@@ -14,6 +14,7 @@ before_install:
   - mkdir casperjs
   - tar -xvf casperjs-1.1-beta1.tgz -C casperjs --strip-components 1
   - sudo ln -s ~/casperjs/bin/casperjs bin/casperjs
-  - bin/casperjs --version
-  - ls -la bin/casperjs
+  - ls -la bin/
+  - ls -la
+
 
