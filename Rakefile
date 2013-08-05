@@ -1,3 +1,12 @@
+
+task :default => :selftest
+
+task :selftest do
+  exec('bin/ecto.sh selftest')
+end
+
+# Run ecto seltest.
+#
 # Install/Uninstall ecto task.
 task :install => :create_ecto_symlink do
   puts 'Installed ecto.'
