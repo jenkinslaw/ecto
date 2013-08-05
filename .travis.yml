@@ -16,4 +16,6 @@ before_install:
   - ls -la casperjs/bin
   - ln -s ~/bin/casperjs ~/casperjs/bin/casperjs
   - ls -la bin/casperjs
+  - ls -la ~
+  - cwd
   - casperjs --version
