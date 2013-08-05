@@ -13,12 +13,7 @@ before_install:
   - wget https://github.com/n1k0/casperjs/tarball/1.1-beta1 -O casperjs-1.1-beta1.tgz
   - mkdir casperjs
   - tar -xvf casperjs-1.1-beta1.tgz -C casperjs --strip-components 1
-  - ls -la casperjs/bin
-  - ls -la ~
-  - ls -la
-  - pwd
-  - ln -s /home/travis/build/jenkinslaw/ecto/bin/casperjs bin/casperjs
-  - PATH="$(pwd)/bin:$PATH" && export PATH
 env:
   - PHANTOMJS_EXECUTABLE="bin/phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes"
+  - CASPERJS="casperjs/bin/casperjs"
 

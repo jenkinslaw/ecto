@@ -111,11 +111,15 @@ else
   location=$1
 fi
 
-
 # Run tests or genrate some tests.
+if [ -z "$CASPERJS" ]
+then
+  CASPERJS='casperjs'
+fi
+
 if [ $1 = "selftest" ]
 then
-  casperjs test --testSlow='yes' --ignore-ssl-errors='yes' --casperIncludes="$INCLUDES" --includes="$INCLUDES/Eval.js" "$INCLUDES/tests/Eval.test.js"
+  $CASPERJS test --testSlow='yes' --ignore-ssl-errors='yes' --casperIncludes="$INCLUDES" --includes="$INCLUDES/Eval.js" "$INCLUDES/tests/Eval.test.js"
 else
   casperjs --url="$location" --id="$id" --ignore-ssl-errors='yes' --casperIncludes="$DIR/../casper-includes" "$DIR/../src/$action.js"
 fi
