@@ -17,10 +17,10 @@ before_install:
   - ls -la ~
   - ls -la
   - pwd
-  - ln -s ~/build/jenkinslaw/ecto/bin/casperjs /usr/local/bin/casperjs
+  - ln -s ~/build/jenkinslaw/ecto/bin/casperjs bin/casperjs
   - ls -la bin/casperjs
   - bin/casperjs --version
+  - PATH="$(pwd)/bin:$PATH" && export PATH
 env:
   - PHANTOMJS_EXECUTABLE="bin/phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes"
-  -
 
