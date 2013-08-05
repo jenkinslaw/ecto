@@ -14,5 +14,5 @@ before_install:
   - mkdir casperjs
   - tar -xvf casperjs-1.1-beta1.tgz -C casperjs --strip-components 1
 env:
-  - PHANTOMJS_EXECUTABLE="bin/phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes" CASPERJS="casperjs/bin/casperjs"
+  - PHANTOMJS_EXECUTABLE="bin/phantomjs190 --local-to-remote-url-access=yes --ignore-ssl-errors=yes" CASPERJS="casperjs/bin/casperjs"
 
